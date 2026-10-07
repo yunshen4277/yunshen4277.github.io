@@ -42,7 +42,7 @@ window.PORTFOLIO = {
       description:
         "A responsive home for technical projects, hardware interests, and student leadership—built to grow with me.",
       category: "WEB DEVELOPMENT",
-      status: "Built · Deployment pending",
+      status: "Published",
       technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
       image: "assets/images/project-portfolio.svg",
       imageAlt: "Abstract browser layout diagram for this portfolio",
@@ -59,7 +59,7 @@ window.PORTFOLIO = {
         },
         {
           heading: "Next steps",
-          text: "Replace the labeled personal details, connect a repository, and publish through GitHub Pages.",
+          text: "Replace the labeled personal details and continue documenting projects and club activities.",
         },
       ],
     },
