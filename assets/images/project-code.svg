@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="Abstract programming structure diagram">
+<defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#77608e" opacity=".25"/></pattern><radialGradient id="glow"><stop stop-color="#362746"/><stop offset="1" stop-color="#17151f"/></radialGradient></defs>
+<rect width="640" height="320" fill="#17151f"/><rect width="640" height="320" fill="url(#glow)"/><rect width="640" height="320" fill="url(#grid)"/>
+<g stroke="#8971ad" fill="none" stroke-width="1.5">
+<rect x="157" y="48" width="326" height="224" rx="8" fill="#19161f"/><path d="M157 79h326" stroke="#5c456e"/><g stroke-width="5" stroke-linecap="round"><path d="M204 107h46m13 0h57" stroke="#9d79c8"/><path d="M223 132h73m14 0h35M223 157h48" stroke="#6b6180"/><path d="M288 157h75m-140 25h115" stroke="#a78cbf"/><path d="M223 207h37m13 0h33M204 232h15" stroke="#6b6180"/></g><g fill="#6b577d" stroke="none" font-family="monospace" font-size="10"><text x="176" y="111">1</text><text x="176" y="136">2</text><text x="176" y="161">3</text><text x="176" y="186">4</text><text x="176" y="211">5</text><text x="176" y="236">6</text></g></g>
+</svg>
