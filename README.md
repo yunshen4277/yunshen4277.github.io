@@ -2,7 +2,12 @@
 
 A responsive, single-page portfolio for a Computer Science student at Florida Polytechnic University and Founder & President of Phoenix Hardware Club. It presents hardware interests, leadership, projects, education, and contact information in a charcoal-and-violet design with an optional light theme.
 
-This is plain HTML, CSS, and JavaScript. There are no packages to install, build commands, backend, database, paid services, or API keys. All assets are local. The files are ready for static hosting; creating a GitHub repository and enabling GitHub Pages are separate steps below.
+This is plain HTML, CSS, and JavaScript. There are no packages to install, build commands, backend, database, paid services, or API keys. All assets are local.
+
+**Live website:** [yunshen4277.github.io](https://yunshen4277.github.io/)  
+**Source repository:** [yunshen4277/yunshen4277.github.io](https://github.com/yunshen4277/yunshen4277.github.io)
+
+GitHub Pages is deployed from the `main` branch and `/(root)` folder, with HTTPS enforced. The GitHub profile link, website URL, canonical URL, and social-preview URLs are configured. LinkedIn, email, resume, and other missing personal details remain clearly labeled placeholders.
 
 Missing personal details are deliberately labeled. Empty contact and social links stay disabled until you add real destinations. The included PDF is a **placeholder, not a completed resume**. Example project entries must not be presented as completed work.
 
@@ -29,6 +34,7 @@ assets/
     ...                            Other local illustrations and image placeholders
   resume/
     Junkai-Mai-Resume.pdf           Clearly labeled placeholder PDF
+    README.md                      Resume replacement instructions
 ```
 
 ## Open locally
@@ -56,7 +62,7 @@ In `js/content.js`, find `skills`. Each group has a `title`, a `note`, and an `i
 { title: "Tools", note: "Suggested tools · to confirm", items: ["Git", "GitHub", "VS Code"] }
 ```
 
-Review the supplied skill areas before publishing and keep only ones you can accurately discuss. Programming languages and tools are labeled “to confirm”; other categories describe interests and areas of focus. Update the notes only when you have confirmed the experience. These are grouped labels, not proficiency ratings.
+Review the supplied skill areas and keep only ones you can accurately discuss. Programming languages and tools are labeled “to confirm”; other categories describe interests and areas of focus. Update the notes only when you have confirmed the experience. These are grouped labels, not proficiency ratings.
 
 Find `education` to edit `graduation`, `gpa`, `coursework`, `honors`, and `certifications`. Follow the existing value types and comments. Keep missing details as placeholders or omit optional details through the supported empty values; never invent them. The university and degree wording live in `index.html`.
 
@@ -100,6 +106,8 @@ While `ready` is `false`, the interface identifies the missing resume rather tha
 
 Edit `links` in `js/content.js`:
 
+The GitHub profile currently points to `https://github.com/yunshen4277`, and the website value is `https://yunshen4277.github.io/`. LinkedIn, email, and club links are still empty.
+
 | Key            | Value                                                     |
 | -------------- | --------------------------------------------------------- |
 | `email`        | Your public contact email, for example `name@example.com` |
@@ -115,15 +123,27 @@ Leave unavailable values as `""`; placeholder controls remain disabled and label
 
 ## SEO, favicon, and share preview
 
-Open the `<head>` in `index.html` and update the page title and descriptions if your profile changes. Find the `[Website URL]` comments and follow the nearby instructions to enable or replace the canonical and social URL metadata. Set the canonical URL, Open Graph URL, and any corresponding social image URL to your actual published address. Metadata should be in the HTML because social crawlers may not run JavaScript.
+Open the `<head>` in `index.html` and update the page title and descriptions if your profile changes. The canonical and Open Graph URLs already use `https://yunshen4277.github.io/`. The Open Graph and Twitter image URLs use `https://yunshen4277.github.io/assets/images/og-image.png`. Keep these URLs in sync if you move the site or add a custom domain. Metadata stays in the HTML because social crawlers may not run JavaScript.
 
 For a project site, the full address includes its repository path, such as `https://YOUR-USERNAME.github.io/portfolio/`. A social image URL would then be `https://YOUR-USERNAME.github.io/portfolio/assets/images/og-image.png`. A custom-domain site might use `https://your-domain.com/assets/images/og-image.png`. Use absolute HTTPS URLs for crawler-facing metadata, while keeping normal CSS, script, PDF, and image paths relative.
 
 The included `assets/images/og-image.png` is an original branded preview generated for this portfolio at 1730 × 909 (approximately the requested 1.91:1 ratio). You can keep it or replace it with a 1200 × 630 PNG designed for link previews. Preserve the filename or update all image metadata paths; also update `og:image:width`, `og:image:height`, and the image alt text if you replace it. Update `assets/icons/favicon.svg` if you want a different personal mark. Preview images are cached by sharing services, so a changed image may not appear immediately.
 
-## Deploy to GitHub Pages
+## Current GitHub Pages deployment
 
-Choose a repository name first:
+The portfolio is already published at [https://yunshen4277.github.io/](https://yunshen4277.github.io/). In [repository Settings → Pages](https://github.com/yunshen4277/yunshen4277.github.io/settings/pages), the current settings are:
+
+- **Source:** Deploy from a branch
+- **Branch:** `main`
+- **Folder:** `/(root)`
+- **Enforce HTTPS:** enabled
+- **Custom domain:** none configured
+
+Commit updates to `main` to publish them. Check the repository's **Actions** tab for deployment progress and **Settings → Pages → Visit site** for the published address. Keep the empty `.nojekyll` file in the repository root. These settings follow [GitHub's publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+### Reuse this project in a different repository
+
+If you later move or reuse the portfolio, the repository name determines the default address:
 
 | Repository name                                 | Default public URL                           |
 | ----------------------------------------------- | -------------------------------------------- |
@@ -132,19 +152,15 @@ Choose a repository name first:
 
 The first is your account's main personal site; the second is a project site. Both work with this portfolio's relative asset paths. Replace `YOUR-USERNAME` with your actual GitHub username. [GitHub's site types](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 
-1. Sign in to GitHub and create a new **public** repository. Public repositories support GitHub Pages on GitHub Free.
-2. Open the extracted portfolio folder. Upload its **contents**, including `index.html`, `css`, `js`, `assets`, README, and `.nojekyll`, using **Add file → Upload files**. Do not upload just the ZIP or place everything inside an extra enclosing folder. Commit the upload to `main`.
-3. Open repository **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch **main** and folder **/(root)**, then click **Save**.
-6. Check the repository's **Actions** tab if you want to see the publishing run. Return to **Settings → Pages** to find **Visit site** once published.
-7. Open the URL, test every section and available link, then update your canonical and social metadata with that URL.
+1. Create a new **public** repository; public repositories support GitHub Pages on GitHub Free.
+2. Upload the portfolio folder's **contents**, including `.nojekyll`, to `main`. Keep `index.html` at the repository root. Do not upload only the ZIP or add an extra enclosing folder.
+3. In **Settings → Pages**, select **Deploy from a branch**, `main`, and `/(root)`, then save.
+4. Wait for the Pages deployment in **Actions** and open **Visit site** in the Pages settings.
+5. Update `links.website` and the canonical, Open Graph, and social-image URLs to the new address; test the published site.
 
-These branch settings follow [GitHub's publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Keep the included empty `.nojekyll` file in the repository root; it disables the unnecessary Jekyll processing. If your upload skips this hidden file, create a file named `.nojekyll` on GitHub. Publication may take up to 10 minutes after a push. [Creating a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+If an upload skips `.nojekyll`, create a file with that exact name on GitHub; it disables unnecessary Jekyll processing. Publication may take up to 10 minutes after a push. [Creating a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 ## Update the published site
-
-After the first successful deployment, change the portfolio project's status from `Built · Deployment pending` to `Published` in `js/content.js`, and change the footer's `Ready for GitHub Pages` text to `Hosted on GitHub Pages` in `index.html`.
 
 Edit files locally and preview them, then upload the changed files to the same locations and commit to `main`. GitHub republishes changes from the configured branch automatically. You can also use GitHub's pencil icon to make small edits directly, then commit them.
 
@@ -165,15 +181,15 @@ If you later use Git or GitHub Desktop, pull the latest repository version befor
 | A     | @    | 185.199.109.153         |
 | A     | @    | 185.199.110.153         |
 | A     | @    | 185.199.111.153         |
-| CNAME | www  | YOUR-USERNAME.github.io |
+| CNAME | www  | yunshen4277.github.io |
 
-Use your username in the CNAME destination, with no protocol or repository path. Replace conflicting parking/website records for these hostnames, preserving unrelated email records. Avoid wildcard records. DNS can take up to 24 hours. [GitHub's domain and DNS setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+The CNAME destination has no protocol or repository path. If you move the site to another GitHub account, use that account's username instead. Replace conflicting parking/website records for these hostnames, preserving unrelated email records. Avoid wildcard records. DNS can take up to 24 hours. [GitHub's domain and DNS setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
 For branch deployment, saving the domain in GitHub creates a `CNAME` file in your repository. Keep it when updating. `CNAME.example` is inactive; it must not become `CNAME` while it contains an example. If preparing that file manually, use one line containing only the domain you own, and still configure the domain in GitHub Pages settings.
 
-## Enable HTTPS
+## HTTPS and future custom domains
 
-The default `github.io` address supports HTTPS. For a custom domain, wait for GitHub's DNS check and certificate provisioning, then select **Settings → Pages → Enforce HTTPS**. The option may take up to 24 hours to become available after configuring the domain. Open the `https://` URL and verify your images, stylesheet, and scripts load. Avoid adding `http://` external assets, which can cause mixed-content problems. [GitHub's HTTPS instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
+HTTPS is already enforced for `https://yunshen4277.github.io/`. If you add a custom domain, wait for GitHub's DNS check and certificate provisioning, then select **Settings → Pages → Enforce HTTPS**. The option may take up to 24 hours to become available after configuring the domain. Open the new `https://` URL and verify your images, stylesheet, and scripts load. Avoid adding `http://` external assets, which can cause mixed-content problems. [GitHub's HTTPS instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
 
 Once the custom URL works, update `links.website`, canonical URL, Open Graph URL, and absolute social-image URLs. Test both the bare domain and `www` version.
 
@@ -196,9 +212,10 @@ After each meaningful update, check a narrow phone viewport and a desktop viewpo
 ## Placeholder checklist
 
 - [ ] Public email (`links.email`).
-- [ ] GitHub and LinkedIn URLs (`links.github`, `links.linkedin`).
-- [ ] Final website URL (`links.website`, canonical and social URL metadata).
-- [ ] Absolute social-preview image URLs in `index.html`.
+- [x] GitHub URL (`links.github`): `https://github.com/yunshen4277`.
+- [ ] LinkedIn URL (`links.linkedin`).
+- [x] Website URL (`links.website`, canonical and social URL metadata): `https://yunshen4277.github.io/`.
+- [x] Absolute social-preview image URLs in `index.html`.
 - [ ] Professional photo and alt text (`profile`).
 - [ ] Actual PHC logo and alt text (`phc.logo`, `phc.logoAlt`).
 - [ ] PHC website, Discord, Instagram, and any other social URL (`links.phc*`).
@@ -221,11 +238,12 @@ After each meaningful update, check a narrow phone viewport and a desktop viewpo
 - Browser layout checked at 320, 390, 768, 1024, and 1920 CSS-pixel viewport widths with no horizontal page overflow.
 - Dark and light themes, saved theme preference, mobile menu, section navigation, active navigation, project dialogs, Escape dismissal, and keyboard focus restoration checked in a Chromium browser.
 - Local assets returned HTTP 200; no missing internal anchor targets or duplicate IDs were found. All three JavaScript files passed syntax checks, and the browser reported no console errors.
+- After deployment, the live GitHub Pages homepage and 15 asset URLs returned HTTP 200 with appropriate content types; their contents matched the reviewed source files. HTTPS is enforced, and the live canonical and social-preview URLs use the published address.
 - Placeholder PDF was rendered and visually checked. Missing external links remain intentionally disabled. Reduced-motion overrides were reviewed in the source.
-- These checks are not a full accessibility audit or testing on physical iOS/Android devices. Test your own content and the published GitHub Pages address after deployment.
+- These checks are not a full accessibility audit or testing on physical iOS/Android devices. Retest your own content and the published GitHub Pages address after future updates.
 
 ### Limits
 
-This is a static portfolio. It has no accounts, CMS, message database, or server-side contact form. JavaScript powers the content-driven cards and interactions; keep all three JavaScript files available. A `mailto:` link relies on the visitor's email app. Search engines and sharing services decide when to recrawl metadata, and a correct metadata setup does not guarantee immediate preview refreshes. The project has not been published and no custom domain has been purchased or connected.
+This is a static portfolio. It has no accounts, CMS, message database, or server-side contact form. JavaScript powers the content-driven cards and interactions; keep all three JavaScript files available. A `mailto:` link relies on the visitor's email app. Search engines and sharing services decide when to recrawl metadata, and a correct metadata setup does not guarantee immediate preview refreshes. The site is published on GitHub Pages; no custom domain has been purchased or connected.
 
 As you gain experience, replace samples with documented builds, clear photos, design decisions, troubleshooting notes, code, and results you can support. Add actual coursework, internships, research, and club workshops as they happen. For sponsorship conversations, real activity photos and specific future club needs will be more useful than unsupported metrics.
